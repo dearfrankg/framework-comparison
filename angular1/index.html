@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>angular1 counter example</title>
+  </head>
+  <body>
+    <div ng-app="CounterApp">
+        <div ng-controller="CounterController">
+            <button ng-click="decrement()">Decrement</button>
+            <button ng-click="increment()">Increment</button>
+            <div>{{counter}}</div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.3/angular.min.js"></script>
+    <script>
+      angular.module("CounterApp", [])
+          .controller("CounterController", function($scope) {
+              $scope.counter = 0;
+              $scope.increment = function() {
+                  $scope.counter++;
+              };
+              $scope.decrement = function() {
+                  $scope.counter--;
+              };
+      })
+    </script>
+  </body>
+</html>
